@@ -1,0 +1,106 @@
+---
+import { Image } from "astro:assets";
+import MainNavigation from "@components/main-navigation.astro";
+import logo from "@assets/logo.svg";
+import "@fontsource/acme";
+import "@fontsource/inter/100.css";
+import "@fontsource/inter/200.css";
+import "@fontsource/inter/300.css";
+import "@fontsource/inter/400.css";
+import "@fontsource/inter/500.css";
+import "@fontsource/inter/600.css";
+import "@fontsource/inter/700.css";
+import "@fontsource/inter/800.css";
+import "@fontsource/inter/900.css";
+import "@styles/base.css";
+import { ClientRouter } from "astro:transitions";
+import { getCurrentLanguage } from "src/utils";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+
+const section = Astro.url.pathname.slice(1).split("/", 2).at(1);
+
+const currentLanguage = getCurrentLanguage(Astro.currentLocale);
+
+const localizedNavLabels = {
+  fi: { portfolio: "Portfolio", about: "Tietoa", contact: "Ota yhteyttä" },
+  en: { portfolio: "Portfolio", about: "About", contact: "Contact" }
+}[currentLanguage];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Minna Huuskonen - {title}</title>
+    <ClientRouter />
+  </head>
+  <body>
+    <header id="header" class="sticky top-0 z-10 bg-white transition-shadow data-[not-on-top]:shadow-lg">
+      <div class="mx-auto flex h-20 max-w-screen-lg flex-row items-center justify-between p-4">
+        <a href=`/${currentLanguage}` class="z-10">
+          <Image src={logo} alt="Logo" loading="eager" class="sm:h-full" />
+        </a>
+        <MainNavigation
+          navItems={[
+            { label: localizedNavLabels.portfolio, href: "/", selected: !section || section === "portfolio" },
+            { label: localizedNavLabels.about, href: "/about", selected: section === "about" }
+            // { label: localizedNavLabels.contact, href: "/contact", selected: section === "contact" }
+          ]}
+        />
+      </div>
+    </header>
+    <main class="mx-auto my-8 max-w-screen-lg px-4 md:my-14">
+      <slot />
+    </main>
+    <footer class="flex h-40 flex-col items-center justify-center bg-primary-lightest/50">
+      <p class="text-zinc-600">© Minna Huuskonen 2025</p>
+    </footer>
+  </body>
+</html>
+
+<script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
+<script>
+  /**
+   * Adds scroll listener to page.
+   * The listener toggles the header shadow depending on scroll Y position being 0 or not.
+   *
+   * @author Lauri Lukkarinen <Github @lauriLukkarinen>
+   */
+  const setupScrollListener = () => {
+    const header = document.querySelector("#header");
+
+    window.addEventListener("scroll", () => {
+      if (!header) return;
+      const headerHasAttribute = header.hasAttribute("data-not-on-top");
+      if (window.scrollY && !headerHasAttribute) {
+        header.setAttribute("data-not-on-top", "");
+      } else if (!window.scrollY && headerHasAttribute) {
+        header.removeAttribute("data-not-on-top");
+      }
+    });
+  };
+
+  /**
+   * Adds Smooth scrolling class to document after first render pass of the page.
+   * This is done to remove animated scrolling on page when navigating directly to URL that preserves last scroll position.
+   *
+   * @author Lauri Lukkarinen <Github @lauriLukkarinen>
+   */
+  const addSmoothScrolling = () => {
+    document.documentElement.setAttribute("class", "scroll-smooth");
+  };
+
+  document.addEventListener("astro:page-load", () => {
+    setupScrollListener();
+    addSmoothScrolling();
+  });
+</script>

@@ -1,0 +1,12 @@
+---
+import { getCurrentLanguage } from "src/utils";
+
+const currentLanguage = getCurrentLanguage(Astro.currentLocale);
+
+const otherLanguage = { en: "fi", fi: "en" }[currentLanguage];
+const changeLanguageTitle = { en: "Suomeksi", fi: "In English" }[currentLanguage];
+---
+
+<a class="text-lg text-zinc-600" href={Astro.url.pathname.replace(currentLanguage, otherLanguage)}>
+  {changeLanguageTitle}
+</a>

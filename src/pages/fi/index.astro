@@ -1,0 +1,72 @@
+---
+import PortfolioLayout from "@layouts/portfolio-layout.astro";
+import { Image } from "astro:assets";
+import avatar from "@assets/avatar.png";
+import bigfootmenu from "@assets/bigfoot-in-space/bigfootmenu.png";
+import lahiruokashop from "@assets/lahiruoka-shop/desktop-and-mobile.png";
+import sw14 from "@assets/sw-14/applications-desktop-and-mobile.png";
+---
+
+<PortfolioLayout title="Portfolio">
+  <div class="grid grid-cols-1 gap-6 sm:px-14 md:grid-cols-2 md:px-20">
+    <div class="grid place-content-center md:order-last">
+      <Image loading="eager" src={avatar} alt="Piirros minusta" class="w-[300px] rounded-full" />
+    </div>
+    <div class="flex flex-col items-center gap-6 md:items-start">
+      <h1 class="text-left text-3xl">
+        Moi! Olen Minna,<br class="hidden md:inline" />
+        UI/UX-suunnittelija.
+      </h1>
+      <p class="max-w-md text-left text-xl">
+        Intohimoni on suunnitella sujuvia käyttäjäkokemuksia käyttäjäkeskeisellä lähestymistavalla. Suunnittelen
+        tyylikkäitä ja yhtenäisiä käyttöliittymiä, joita on miellyttävä käyttää.
+      </p>
+      <!-- <a class="btn px-12" href="/fi/contact">Jutellaan!</a> -->
+    </div>
+  </div>
+  <hr class="my-8 border-zinc-200 md:my-14" />
+  <div class="sm:px-14 md:px-20">
+    <h2 class="mb-8 text-3xl md:mb-14">Portfolio</h2>
+    <div class="mb-12 grid grid-cols-1 gap-6 md:mb-24 md:grid-cols-2">
+      <a href="/fi/portfolio/sw-14">
+        <Image loading="eager" src={sw14} alt="UI-uudistus: työpöytä- ja mobiiliesimerkkinäkymät" />
+      </a>
+      <div class="flex flex-col gap-3">
+        <h3 class="text-2xl">Käyttöliittymäuudistus & suunnitteluohjeet</h3>
+        <p>
+          Suunnittelin upouuden käyttöliittymän nykyisen työnantajani päätuotteelle ottaen huomioon niin organisaation
+          vaatimukset kuin UX-perusperiaatteetkin, sovittaen ne teollisuuden tarpeisiin.
+        </p>
+        <a href="/fi/portfolio/sw-14" class="text-xl hover:text-primary-dark">Lue lisää</a>
+      </div>
+    </div>
+    <div class="mb-12 grid grid-cols-1 gap-6 md:mb-24 md:grid-cols-2">
+      <a href="/fi/portfolio/lahiruoka-shop">
+        <Image src={lahiruokashop} alt="Lähiruoka Shop: työpöytä- ja mobiiliesimerkkinäkymät" />
+      </a>
+      <div class="flex flex-col gap-3">
+        <h3 class="text-2xl">Digitaalinen palvelu lähiruoan ostamiseen</h3>
+        <p>
+          Henkilökohtainen projekti. Vaihtoehtoinen tapa tilata paikallista ruokaa Facebook-ryhmän (Reko) sijaan.
+          Projekti on saanut inspiraationsa kiinnostuksestani paikallista ruokaa kohtaan sekä mielenkiinnostani kehittää
+          suunnitteluratkaisuja.
+        </p>
+        <a href="/fi/portfolio/lahiruoka-shop" class="text-xl hover:text-primary-dark">Lue lisää</a>
+      </div>
+    </div>
+    <div class="mb-12 grid grid-cols-1 gap-6 md:mb-24 md:grid-cols-2">
+      <a href="/fi/portfolio/bigfoot-in-space">
+        <Image src={bigfootmenu} alt="Bigfoot in Space päämenu" />
+      </a>
+      <div class="flex flex-col gap-3">
+        <h3 class="text-2xl">Pelin UI/UX-suunnittelu</h3>
+        <p>
+          Kouluprojekti, jossa vastuullani oli käyttöliittymäelementtien luominen sekä osallistuminen pelin
+          käyttöliittymän UI/UX-suunnitteluun ja käyttäjätestaukseen. Projektissa laadittiin myös tyyliohjeet ja
+          toteutettiin päävalikon tarkka (high-fidelity) versio.
+        </p>
+        <a href="/fi/portfolio/bigfoot-in-space" class="text-xl hover:text-primary-dark">Lue lisää</a>
+      </div>
+    </div>
+  </div>
+</PortfolioLayout>

@@ -1,0 +1,131 @@
+---
+import PortfolioLayout from "@layouts/portfolio-layout.astro";
+import { Image } from "astro:assets";
+import frontpage from "@assets/lahiruoka-shop/desktop-and-mobile.png";
+import changelocation from "@assets/lahiruoka-shop/change-location.png";
+import register from "@assets/lahiruoka-shop/register.png";
+import products from "@assets/lahiruoka-shop/products.png";
+import producers from "@assets/lahiruoka-shop/producers.png";
+import producer from "@assets/lahiruoka-shop/producer.png";
+import category from "@assets/lahiruoka-shop/category.png";
+import product from "@assets/lahiruoka-shop/product.png";
+import shoppingbag from "@assets/lahiruoka-shop/shopping-bag.png";
+import checkout from "@assets/lahiruoka-shop/checkout.png";
+import success from "@assets/lahiruoka-shop/success.png";
+import profile from "@assets/lahiruoka-shop/profile.png";
+import editprofile from "@assets/lahiruoka-shop/edit-profile.png";
+import orders from "@assets/lahiruoka-shop/orders.png";
+import orderhistory from "@assets/lahiruoka-shop/order-history.png";
+import OverlayLink from "@components/overlay-link.astro";
+---
+
+<PortfolioLayout title="Digitaalinen palvelu lähiruoan ostamiseen">
+  <div class="flex flex-col items-center gap-8">
+    <div class="w-full max-w-prose">
+      <a href="/fi" class="text-xl hover:text-primary-dark">{"<<"}</a>
+    </div>
+    <div class="w-full max-w-prose">
+      <h1 class="text-3xl">Digitaalinen palvelu lähiruoan ostamiseen</h1>
+    </div>
+    <p class="max-w-prose text-justify">
+      REKO (Rejäl konsumtion - reilua kuluttamista) on malli paikallisen ruoan myymiseen ja ostamiseen. Kuluttajilla on
+      mahdollisuus ostaa paikallista ruokaa suoraan tuottajilta Facebook-ryhmän kautta. Kuluttajien tulee noutaa
+      tilauksensa sovitusta paikasta tiettyyn aikaan. Kaikki eivät kuitenkaan käytä Facebookia, eivätkä kaikki halua
+      tehdä julkisia tilauksia. Tuottajat voisivat todennäköisesti saada enemmän asiakkaita, jos käytettävissä olisi
+      houkutteleva ja käyttäjäystävällinen palvelu tilausten tekemiseen. Päätin tutkia, millainen digitaalinen palvelu,
+      joka on tarkoitettu paikallisen ruoan ostamiseen, voisi olla.
+    </p>
+    <p class="max-w-prose text-justify">
+      Etusivulla on mahdollisuus valita sijainti, josta asiakas haluaa noutaa tilauksensa. Sivusto käyttäisi myös
+      sijaintitietoja, jonka avulla se ehdottaa kaupunkia, jossa käyttäjä voi selata tuotteita. Käyttäjä voi vaihtaa
+      sijainnin sivuston yläreunasta. Yläreunasta on myös mahdollisuus kirjautua sisään ja rekisteröityä palveluun.
+    </p>
+    <OverlayLink href={frontpage.src}>
+      <Image loading="eager" src={frontpage} alt="Lähiruoka Shop etusivu" />
+    </OverlayLink>
+    <OverlayLink href={changelocation.src}>
+      <Image src={changelocation} alt="Vaihda kaupunkia -ominaisuus" />
+    </OverlayLink>
+    <OverlayLink href={register.src}>
+      <Image src={register} alt="Rekisteröidy-modaali" />
+    </OverlayLink>
+    <p class="max-w-prose text-justify">
+      Sijainnin valitsemisen jälkeen käyttäjä näkee kaikki valitun kaupungin tuotteet ja tuottajat. Tuotteet on
+      järjestetty kategorioihin, ja kunkin tuotteen saatavilla oleva määrä on myös näkyvillä. Sivun yläreunasta löytyy
+      hakutoiminto. Lisäksi sivulta löytyy osio, joka esittelee alueen kaikki tuottajat.
+    </p>
+    <OverlayLink href={products.src}>
+      <Image src={products} alt="Tuotteet-näkymä" />
+    </OverlayLink>
+    <OverlayLink href={producers.src}>
+      <Image src={producers} alt="Tuottajat-näkymä" />
+    </OverlayLink>
+    <OverlayLink href={producer.src}>
+      <Image src={producer} alt="Tuottajasivu" />
+    </OverlayLink>
+    <p class="max-w-prose text-justify">
+      Kun kategoria valitaan, käyttäjä näkee kaikki valitun kategorian saatavilla olevat tuotteet. Tuotteen nimen
+      lisäksi näkyvillä on sen kappalehinta ja kilohinta. Käyttäjä voi joko valita tuotteen nähdäkseen sen tiedot tai
+      lisätä sen suoraan ostoskoriin.
+    </p>
+    <OverlayLink href={category.src}>
+      <Image src={category} alt="Kategorianäkymä" />
+    </OverlayLink>
+    <p class="max-w-prose text-justify">
+      Tuotesivulla näkyy tuotteen kuvaus, tuottaja, sijainnit, joista tuote voidaan noutaa, sekä käytettävissä olevat
+      maksutavat. Ostoskoriin lisättävän määrän voi myös tarvittaessa muuttaa.
+    </p>
+    <OverlayLink href={product.src}>
+      <Image src={product} alt="Tuotenäkymä" />
+    </OverlayLink>
+    <p class="max-w-prose text-justify">
+      Ostoskorissa käyttäjä voi nähdä yhteenvedon lisättyjen tuotteiden nimistä, hinnoista ja määristä. Tuotteet voi
+      myös poistaa ostoskorista. Kokonaishinta näkyy alareunassa. Käyttäjä voi jatkaa tuotteiden varaukseen, jolloin
+      siirrytään maksusivulle.
+    </p>
+    <OverlayLink href={shoppingbag.src}>
+      <Image src={shoppingbag} alt="Ostoskori" />
+    </OverlayLink>
+    <p class="max-w-prose text-justify">
+      Maksusivulla käyttäjän on valittava noutopaikka tilaukselleen. "?"-napin takaa löytyvä vihjeteksti kertoo
+      lisätietoa noutopaikan valinnasta. Käyttäjä näkee myös seuraavan noutoajankohdan aikataulun. Tilauksen
+      vahvistamisen jälkeen käyttäjä ohjataan vahvistussivulle.
+    </p>
+    <OverlayLink href={checkout.src}>
+      <Image src={checkout} alt="Kassa" />
+    </OverlayLink>
+    <OverlayLink href={success.src}>
+      <Image src={success} alt="Vahvistussivu" />
+    </OverlayLink>
+    <p class="max-w-prose text-justify">
+      Käyttäjä saa tilausvahvistuksen sähköpostitse. Jos käyttäjä on kirjautunut sisään, hän voi myös tarkastella
+      tilaustaan profiilisivulta. Profiilisivu sisältää osiot käyttäjätiedoille, tuleville noudoille ja
+      tilaushistorialle. Käyttäjätiedot-osiossa näkyvät käyttäjän nimi ja yhteystiedot, jotka ovat muokattavissa.
+      Muokkaustilassa käyttäjä voi myös valita, haluaako hän tilauksesta kuitin sähköpostiinsa. Myös salasanan voi
+      vaihtaa.
+    </p>
+    <OverlayLink href={profile.src}>
+      <Image src={profile} alt="Profiili" />
+    </OverlayLink>
+    <OverlayLink href={editprofile.src}>
+      <Image src={editprofile} alt="Muokkaa profiilia -ominaisuus" />
+    </OverlayLink>
+    <p class="max-w-prose text-justify">
+      Tulevat noudot -osio näyttää tärkeät tiedot, kuten noutoajan, -päivämäärän ja -paikan, tilauksen yhteenvedon sekä
+      käytettävissä olevat maksutavat. Tilaushistoria-osio puolestaan näyttää samat tiedot kaikista aiemmista
+      tilauksista.
+    </p>
+    <OverlayLink href={orders.src}>
+      <Image src={orders} alt="Tilaukset-sivu" />
+    </OverlayLink>
+    <OverlayLink href={orderhistory.src}>
+      <Image src={orderhistory} alt="Tilaushistoria" />
+    </OverlayLink>
+    <p class="max-w-prose text-justify">
+      Projekti on kokonaisuudessaan interaktiivinen prototyyppi, johon on toteutettu hover-tilat ja siirtymät. Seuraava
+      askel olisi jatkokehittää suunnitelmaa järjestämällä käyttäjätestaus ja tehdä parannuksia sen tulosten
+      perusteella.
+    </p>
+    <a data-astro-reload href="#top" title="Takaisin ylös" class="text-xl hover:text-primary-dark">Takaisin ylös</a>
+  </div>
+</PortfolioLayout>

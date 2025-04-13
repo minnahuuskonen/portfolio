@@ -1,0 +1,89 @@
+---
+export const prerender = false;
+
+import PortfolioLayout from "@layouts/portfolio-layout.astro";
+import { actions, isInputError } from "astro:actions";
+
+const result = Astro.getActionResult(actions.sendContactForm);
+const inputErrors = isInputError(result?.error) ? result.error.fields : {};
+---
+
+<PortfolioLayout title="Ota yhteyttä">
+  <div class="flex flex-col content-center">
+    <h1 class="text-3xl">Ota yhteyttä!</h1>
+    <form class="mt-8" method="post" action={actions.sendContactForm}>
+      <div class="mb-6 flex flex-col gap-6 md:flex-row">
+        <div class="md:flex-1">
+          <label class="mb-2 block text-sm font-bold tracking-wide" for="firstName">
+            Etunimi <span class="text-red-500">*</span>
+          </label>
+          <input id="firstName" name="firstName" transition:persist required type="text" autocomplete="given-name" />
+          {inputErrors.firstName && <p class="text-red-500">{inputErrors.firstName.join(",")}</p>}
+        </div>
+        <div class="md:flex-1">
+          <label for="lastName">
+            Sukunimi <span class="text-red-500">*</span>
+          </label>
+          <input id="lastName" name="lastName" transition:persist required type="text" autocomplete="family-name" />
+          {inputErrors.lastName && <p class="text-red-500">{inputErrors.lastName.join(",")}</p>}
+        </div>
+      </div>
+      <div class="mb-6 w-full">
+        <label for="sender">
+          Sähköpostiosoite <span class="text-red-500">*</span>
+        </label>
+        <input id="sender" name="sender" transition:persist required type="email" />
+        {inputErrors.sender && <p class="text-red-500">{inputErrors.sender.join(",")}</p>}
+      </div>
+      <div class="mb-6 w-full">
+        <label for="subject">
+          Aihe <span class="text-red-500">*</span>
+        </label>
+        <input id="subject" name="subject" transition:persist required type="text" autocomplete="off" />
+        {inputErrors.subject && <p class="text-red-500">{inputErrors.subject.join(",")}</p>}
+      </div>
+      <div class="mb-6 w-full">
+        <label for="message">
+          Viesti <span class="text-red-500">*</span>
+        </label>
+        <textarea id="message" name="message" transition:persist required rows="10"></textarea>
+        {inputErrors.message && <p class="text-red-500">{inputErrors.message.join(",")}</p>}
+      </div>
+      {
+        !result && (
+          <div class="flex flex-col-reverse gap-6 sm:flex-row">
+            <button class="btn h-[65px]" type="submit">
+              Lähetä
+            </button>
+            <div id="cf-turnstile" class="self-center" />
+          </div>
+        )
+      }
+      {result && !result.error && <p class="text-green-500">Viesti lähetetty onnistuneesti!</p>}
+      {
+        result && result.error && !isInputError(result?.error) && (
+          <p class="text-red-500">Viestin lähettäminen ei onnistunut. Yritä myöhemmin uudelleen.</p>
+        )
+      }
+    </form>
+  </div>
+</PortfolioLayout>
+
+<script>
+  /**
+   * Registers Cloudflare Turnstile widget. Widget is used to prevent spam.
+   *
+   * @author Lauri Lukkarinen <Github @lauriLukkarinen>
+   */
+  document.addEventListener("astro:page-load", () => {
+    const turnstileWidget = document.getElementById("cf-turnstile");
+    if (!turnstileWidget) return;
+    turnstile.render(turnstileWidget, {
+      sitekey: import.meta.env.PUBLIC_TURNSTILE_SITE_KEY,
+      language: "fi",
+      theme: "light",
+      appearance: "always",
+      retry: "never"
+    });
+  });
+</script>

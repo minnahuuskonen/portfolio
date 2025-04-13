@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    @apply text-zinc-700;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  a,
+  button {
+    @apply font-serif;
+  }
+
+  a {
+    @apply text-primary;
+  }
+
+  p {
+    @apply leading-relaxed;
+    @apply text-zinc-600;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    @apply block;
+    @apply w-full;
+    @apply appearance-none;
+    @apply border;
+    @apply border-zinc-400;
+    @apply bg-zinc-50;
+    @apply px-4;
+    @apply py-3;
+    @apply leading-tight;
+    @apply focus:border-primary;
+    @apply focus:bg-white;
+    @apply focus:outline-none;
+  }
+
+  label {
+    @apply mb-2;
+    @apply block;
+    @apply text-sm;
+    @apply font-bold;
+    @apply tracking-wide;
+    @apply text-gray-700;
+  }
+
+  .btn {
+    @apply bg-primary-light;
+    @apply px-6;
+    @apply py-3;
+    @apply text-xl;
+    @apply text-white;
+    @apply hover:bg-primary;
+  }
+}

@@ -1,0 +1,46 @@
+---
+import PortfolioLayout from "@layouts/portfolio-layout.astro";
+import { Image } from "astro:assets";
+import realpic from "@assets/realpic.jpg";
+---
+
+<PortfolioLayout title="Tietoa">
+  <div class="flex flex-row gap-8">
+    <Image
+      src={realpic}
+      alt="Minä"
+      class="hidden aspect-[10/16] self-start rounded-br-[64px] rounded-tl-[64px] object-cover md:w-2/5 lg:block lg:self-stretch"
+      loading="eager"
+    />
+    <div>
+      <h1 class="mb-4 text-3xl">Hei siellä!</h1>
+      <Image
+        src={realpic}
+        alt="Minä"
+        class="float-left mb-4 me-6 aspect-[5/6] w-full object-cover sm:w-72 sm:rounded-br-[64px] sm:rounded-tl-[64px] md:mb-0 md:w-96 lg:hidden"
+        loading="eager"
+      />
+      <p class="mb-4 text-justify">
+        Nimeni on Minna. Olen työskennellyt käyttöliittymäsuunnittelijana vuodesta 2017. Minulla on tietojenkäsittelyn
+        tradenomin tutkinto vuodelta 2017 sekä muotoilijan tutkinto pelisuunnittelusta vuodelta 2022.
+      </p>
+      <p class="mb-4 text-justify">
+        Tavoitteeni on pitää aina käyttäjäkeskeinen lähestymistapa käyttöliittymäsuunnittelussa. Tämän vuoksi pidän
+        testaamista yhtenä tärkeimmistä ja aliarvostetuimmista suunnitteluprosessin vaiheista. Kiehtovinta
+        UI/UX-suunnittelussa on minusta se, että se vaatii ymmärrystä sekä psykologiasta että teknologiasta tarjoten
+        samalla mahdollisuuden käyttää luovuutta suunnitteluratkaisussa.
+      </p>
+      <p class="mb-4 text-justify">
+        Tarkkuuteni, empaattinen persoonani ja omistautuminen työlleni ovat suurimpia vahvuuksiani. Minua on kuvailtu
+        oma-aloitteiseksi, itsenäiseksi ja hyväksi tiimityöskentelijäksi. Olen saanut kiitosta myös kyvystäni oppia
+        uusia taitoja nopeasti. Työskentelen sujuvasti Figmalla sekä Adobe Photoshop ja Illustrator -ohjelmilla.
+        Teknologioita, joista minulla on vahvaa osaamista, ovat mm. HTML, CSS, Bootstrap ja Tailwind CSS. Olen myös
+        perehtynyt jonkin verran Storybookiin.
+      </p>
+      <p class="text-justify">
+        Vapaa-aikani kuluu ruuanlaiton, luonnossa liikkumisen, musiikin kuuntelun sekä piirtämisen ja videopelien
+        pelaamisen parissa. Lisäksi omistan kilpikonnan ja lapinporokoiran, joiden parissa riittää myös puuhaa.
+      </p>
+    </div>
+  </div>
+</PortfolioLayout>

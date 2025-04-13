@@ -1,0 +1,85 @@
+---
+import { getRelativeLocaleUrl } from "astro:i18n";
+import LanguageToggle from "./language-toggle.astro";
+
+interface Props {
+  navItems: {
+    label: string;
+    href: string;
+    selected: boolean;
+  }[];
+}
+
+const { navItems } = Astro.props;
+---
+
+<main-navigation class="group">
+  <div class="hidden flex-row gap-10 sm:flex">
+    <nav id="desktop-menu" class="flex flex-row gap-6">
+      {
+        navItems.map(({ label, href, selected }) => (
+          <a
+            class="text-xl underline-offset-8 hover:text-primary"
+            class:list={[selected ? "text-primary underline" : "text-zinc-500"]}
+            href={getRelativeLocaleUrl(Astro.currentLocale ?? "en", href)}
+          >
+            {label}
+          </a>
+        ))
+      }
+    </nav>
+    <LanguageToggle />
+  </div>
+  <button id="mobile-menu-toggle" class="relative z-10 block h-7 w-8 cursor-pointer appearance-none sm:hidden">
+    <span
+      class="absolute left-0 top-0 h-0.5 w-full bg-primary transition-transform group-data-[mobile-menu-open]:translate-y-[13px] group-data-[mobile-menu-open]:rotate-45"
+    ></span>
+    <span
+      class="opacity-1 absolute left-0 h-0.5 w-full bg-primary transition-opacity group-data-[mobile-menu-open]:opacity-0"
+    ></span>
+    <span
+      class="absolute bottom-0 left-0 h-0.5 w-full bg-primary transition-transform group-data-[mobile-menu-open]:translate-y-[-13px] group-data-[mobile-menu-open]:-rotate-45"
+    ></span>
+  </button>
+  <div
+    class="absolute left-0 top-0 flex h-dvh w-dvw translate-x-[-100dvw] flex-col bg-white transition-transform group-data-[mobile-menu-open]:translate-x-0 sm:hidden"
+  >
+    <nav class="flex flex-1 flex-col items-center gap-10 pt-32">
+      {
+        navItems.map(({ label, href, selected }) => (
+          <a
+            class="text-2xl underline-offset-8 hover:text-primary"
+            class:list={[selected ? "text-primary underline" : "text-zinc-500"]}
+            href={getRelativeLocaleUrl(Astro.currentLocale ?? "en", href)}
+          >
+            {label}
+          </a>
+        ))
+      }
+    </nav>
+    <div class="flex justify-center pb-8">
+      <LanguageToggle />
+    </div>
+  </div>
+</main-navigation>
+
+<script>
+  /**
+   * Main navigation web component. Registers event listener for mobile menu button.
+   *
+   * @author Lauri Lukkarinen <Github @lauriLukkarinen>
+   */
+  class MainNavigation extends HTMLElement {
+    constructor() {
+      super();
+
+      const mobileMenuToggle = this.querySelector("#mobile-menu-toggle");
+
+      mobileMenuToggle?.addEventListener("click", () => {
+        this.toggleAttribute("data-mobile-menu-open");
+      });
+    }
+  }
+
+  customElements.define("main-navigation", MainNavigation);
+</script>

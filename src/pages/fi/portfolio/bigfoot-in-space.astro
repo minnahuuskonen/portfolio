@@ -1,0 +1,108 @@
+---
+import PortfolioLayout from "@layouts/portfolio-layout.astro";
+import { Image } from "astro:assets";
+import bigfootmenu from "@assets/bigfoot-in-space/bigfootmenu.png";
+import persona from "@assets/bigfoot-in-space/persona.png";
+import redroutes from "@assets/bigfoot-in-space/redroutes.png";
+import sitemaps from "@assets/bigfoot-in-space/sitemaps.png";
+import flowchart from "@assets/bigfoot-in-space/flowchart.png";
+import wireframe from "@assets/bigfoot-in-space/wireframe.png";
+import colorpalette from "@assets/bigfoot-in-space/colorpalette.png";
+import typography from "@assets/bigfoot-in-space/typography.png";
+import buttons from "@assets/bigfoot-in-space/buttons.png";
+import icons from "@assets/bigfoot-in-space/icons.png";
+import OverlayLink from "@components/overlay-link.astro";
+---
+
+<PortfolioLayout title="Pelin UI/UX-suunnittelu">
+  <div class="flex flex-col items-center gap-8">
+    <div class="w-full max-w-prose">
+      <a href="/fi" class="text-xl hover:text-primary-dark">{"<<"}</a>
+    </div>
+    <div class="w-full max-w-prose">
+      <h1 class="text-3xl">Pelin UI/UX-suunnittelu</h1>
+    </div>
+    <p class="max-w-prose text-justify">
+      Bigfoot in Space oli kouluprojekti, jossa vastuullani oli suunnitella pelin käyttöliittymäelementtejä, kuten
+      painikkeita ja ikoneita. Osallistuin myös päävalikon taustan suunnitteluun sekä pelin UI/UX-suunnitteluun.
+      Peli-idea on 2D-tasohyppelypeli, jossa pelaaja kerää esineitä vältellen samalla vihollisia ja vaaroja. Pelissä on
+      kolme elämää, jotka esitetään sydäminä, joita pelaaja voi palauttaa keräämällä tasoilta löytyviä sydämiä.
+      Pelattava hahmo on Isojalka astronauttiasussa, ja tavoitteena on kerätä avaruushedelmiä ja suorittaa tasot
+      mahdollisimman nopeasti.
+    </p>
+    <OverlayLink href={bigfootmenu.src}>
+      <Image loading="eager" src={bigfootmenu} alt="Bigfoot in Space päämenu" />
+    </OverlayLink>
+    <p class="max-w-prose text-justify">
+      Aloitimme suunnitteluprosessin ideoimalla ja peli-idean hahmottelulla. Loimme pelillemme personan eli
+      henkilöhahmon, jotta ymmärtäisimme paremmin mahdollisia pelaajiamme. Persona luotiin hyödyntämällä tutkimusta
+      pelaajatyypeistä ja pelaajamotivaatiomalleista.
+    </p>
+    <OverlayLink href={persona.src}>
+      <Image src={persona} alt="Amy Hopkins - Peliämme varten luotu persoona" />
+    </OverlayLink>
+    <p class="max-w-prose text-justify">
+      Toteutimme myös punaiset reitit (red routes), sivukartat ja vuokaaviot pelin käyttöliittymälle. Punaiset reitit
+      auttoivat meitä tunnistamaan kaikki kriittiset tehtävät, jotka tuovat eniten arvoa käyttäjille, kuten pelin
+      aloittaminen. Sivukarttoja käytettiin käyttöliittymän informaatiohierarkian havainnollistamiseen. Suunnittelimme
+      käyttöliittymän kulun vuokaavioiden avulla. Käyttämällä luomaamme persona-hahmoa luomissamme tapaustutkimuksissa,
+      pystyimme paremmin hahmottelemaan käyttöliittymän kulkua juuri kohderyhmällemme sopivaksi.
+    </p>
+    <OverlayLink href={redroutes.src}>
+      <Image src={redroutes} alt="Punaiset reitit pelimme käyttöliittymälle" />
+    </OverlayLink>
+    <OverlayLink href={sitemaps.src}>
+      <Image src={sitemaps} alt="Sivukartat reitit pelimme käyttöliittymälle" />
+    </OverlayLink>
+    <OverlayLink href={flowchart.src}>
+      <Image src={flowchart} alt="Vuokaaviot pelimme käyttöliittymälle" />
+    </OverlayLink>
+    <p class="max-w-prose text-justify">
+      UI/UX-prosessi jatkui pelin käyttöliittymän hahmottelulla ja low-fidelity-mallinnosten luomisella Figmaan.
+      Erilaiset siirtymät ruutujen välillä ja modaalien avaaminen lisättiin testauksen tueksi. Laadimme myös
+      UX-dokumentaation, joka sisälsi pelin esittelyn, kohderyhmät ja pelin informaatioarkkitehtuurin.
+      Figma-mallinnoksia käytettiin myös pienen käyttäjätestauksen toteuttamiseen, jossa hyödynsimme etätestausta ja
+      kyselyä. Testauksen tavoitteena oli arvioida käyttöliittymän käytettävyyttä ja selvittää, ymmärtävätkö testaajat,
+      miten pelin taukovalikko avataan.
+    </p>
+    <p class="max-w-prose text-justify">
+      Käyttäjätestauksessa oli kolme tehtävää: pelin asetusten löytäminen, pelin käynnistäminen sekä taukovalikon
+      avaaminen ja päävalikkoon siirtyminen. Testauksen jälkeen osallistujia pyydettiin täyttämään kyselylomake, jossa
+      he antoivat palautetta ja taustatietoja itsestään sekä aiemmasta pelikokemuksestaan. Palaute oli pääasiassa
+      positiivista. Osallistujat kokivat käyttöliittymän selkeäksi ja helposti ymmärrettäväksi. Kaikki testaajat
+      suorittivat useimmat tehtävät onnistuneesti. Yksi käytettävyysongelma nousi kuitenkin esiin. Osallistuja, jolla ei
+      ollut aiempaa pelikokemusta, ei onnistunut avaamaan taukomenua. Menu avautui Escape-näppäimellä, mutta tätä
+      toimintoa ei ollut merkitty selkeästi käyttöliittymään. Testaussessioista laadittiin raportti, ja paransimme
+      käyttöliittymää sen pohjalta.
+    </p>
+    <OverlayLink href={wireframe.src}>
+      <Image src={wireframe} alt="Lo-fi rautalankamalli pelimme käyttöliittymästä" />
+    </OverlayLink>
+    <p class="max-w-prose text-justify">
+      Seuraavaksi loimme pelin päävalikosta high-fidelity-version. Käytimme värejä ja fontteja, jotka sopivat hyvin
+      sarjakuvamaiseen avaruusteemaan. Olin vastuussa painikkeiden, ikoneiden ja päävalikon taustan luonnoksen
+      toteutuksesta. Käyttöliittymäelementtien värit valittiin niin, että ne erottuvat selkeästi taustasta. Lopuksi
+      laadimme tyyliohjeen, jonka tarkoituksena oli dokumentoida pelin käyttöliittymän väripaletti, typografia,
+      painiketyylit ja ikonit.
+    </p>
+    <OverlayLink href={colorpalette.src}>
+      <Image src={colorpalette} alt="Tyylioppaan väripaletti" />
+    </OverlayLink>
+    <OverlayLink href={typography.src}>
+      <Image src={typography} alt="Tyylioppaan typografia" />
+    </OverlayLink>
+    <OverlayLink href={buttons.src}>
+      <Image src={buttons} alt="Tyylioppaan painiketyylit" />
+    </OverlayLink>
+    <OverlayLink href={icons.src}>
+      <Image src={icons} alt="Tyylioppaan ikonit" />
+    </OverlayLink>
+    <p class="max-w-prose text-justify">
+      Saimme opettajaltamme erittäin positiivista palautetta ja olimme itsekin tyytyväisiä projektin lopputulokseen.
+      Osana kurssia meidän tuli pitää henkilökohtaista oppimispäiväkirjaa, jossa dokumentoimme sekä projektin vaiheet
+      että oppitunneilla käsitellyt keskeiset UX/UI-suunnitteluperiaatteet. Opettajani oli erityisen vaikuttunut
+      oppimispäiväkirjastani ja pyysi lupaa käyttää sitä esimerkkinä tuleville opiskelijoille.
+    </p>
+    <a data-astro-reload href="#top" title="Takaisin ylös" class="text-xl hover:text-primary-dark">Takaisin ylös</a>
+  </div>
+</PortfolioLayout>

@@ -1,0 +1,159 @@
+---
+import PortfolioLayout from "@layouts/portfolio-layout.astro";
+import { Image } from "astro:assets";
+import designTokens from "@assets/sw-14/design-tokens.png";
+import applicationsDesktopAndMobile from "@assets/sw-14/applications-desktop-and-mobile.png";
+import navOpenDesktopAndMobile from "@assets/sw-14/nav-open-desktop-and-mobile.png";
+import personDesktopAndMobile from "@assets/sw-14/person-desktop-and-mobile.png";
+import personDarkDesktopAndMobile from "@assets/sw-14/person-dark-desktop-and-mobile.png";
+import productThemeExample from "@assets/sw-14/product-theme-example.png";
+import productThemeExampleDark from "@assets/sw-14/product-theme-example-dark.png";
+import figmaDesktop from "@assets/sw-14/figma-ui-desktop.png";
+import figmaMobile from "@assets/sw-14/figma-ui-mobile.png";
+import OverlayLink from "@components/overlay-link.astro";
+---
+
+<PortfolioLayout title="Käyttöliittymäuudistus & suunnitteluohjeet">
+  <div class="flex flex-col items-center gap-8">
+    <div class="w-full max-w-prose">
+      <a href="/fi" class="text-xl hover:text-primary-dark">{"<<"}</a>
+    </div>
+    <div class="w-full max-w-prose">
+      <h1 class="text-3xl">Käyttöliittymäuudistus & suunnitteluohjeet</h1>
+    </div>
+    <p class="max-w-prose text-justify">
+      Nykyinen työnantajani päätti toteuttaa uuden version tuoteperheensä käyttöliittymästä. Tuoteperheen tuotteita
+      käytetään useilla eri teollisuuden aloilla.
+    </p>
+    <div class="w-full max-w-prose text-zinc-600">
+      <p class="mb-3 font-bold">Työnantajani asetti seuraavat vaatimukset:</p>
+      <ul class="ml-6 list-disc">
+        <li>Käyttöliittymän tulisi näyttää modernilta ja miellyttävältä</li>
+        <li>Puurakennetta ei tulisi käyttää enää päänavigaatiossa</li>
+        <li>Sen ei tulisi muistuttaa lainkaan edellistä versiota</li>
+      </ul>
+    </div>
+    <div class="w-full max-w-prose text-zinc-600">
+      <p class="mb-3 font-bold">Työnantajani asettamien vaatimusten lisäksi minulla oli myös omia tavoitteita:</p>
+      <ul class="ml-6 list-disc">
+        <li>
+          Käyttäjälähtöinen suunnittelu, huomioiden erityisesti ympäristö, jossa käyttöliittymää tullaan käyttämään
+        </li>
+        <li>Mahdollisimman matala oppimiskäyrä nykyisille asiakkaille</li>
+        <li>Saavutettavuuden huomioiminen</li>
+        <li>Ulkoasun ja toiminnan johdonmukaisuus</li>
+        <li>Käytettävyyden parantaminen tuoteperheen käyttäjäpoluissa mahdollisuuksien mukaan</li>
+      </ul>
+    </div>
+    <div class="w-full max-w-prose text-zinc-600">
+      <p class="mb-3 font-bold">Päävastuuni projektin aikana olivat seuraavat:</p>
+      <ul class="ml-6 list-disc">
+        <li>Uuden käyttöliittymän suunnittelu Figmalla, keskittyen erityisesti päänavigaatioon ja yläpalkkiin</li>
+        <li>
+          Suunnitteluohjeiden dokumentointi design tokeneista ja käyttöliittymäkomponenteista koostuvaa design systemiä
+          varten
+        </li>
+        <li>Uusien, tuoteperheen tuotteiden värimaailmojen mukaisten väriteemojen soveltaminen käyttöliittymään</li>
+        <li>
+          Käyttöliittymän rakentaminen ja komponenttien tyylittely käyttäen HTML:ää, CSS:ää, Sassia, Bootstrap 5:tä ja
+          hieman Vue.js:ää
+        </li>
+      </ul>
+    </div>
+    <p class="max-w-prose text-justify">
+      Aloitin suunnitteluprosessin perusteellisella tutkimuksella erityisesti uutta navigaatiota varten, sillä sitä ei
+      haluttu enää esittää puunäkymänä hampurilaisvalikon takana. Kaikki keskeinen suunnittelutyö tehtiin Figmalla.
+      Suunnittelin käyttöliittymästä sekä työpöytä- että mobiiliversiot ja valitsin sille uuden, modernin
+      ikonikokoelman. Lisäsin design tokenit, jotka sisälsivät värit, fonttikoot, välit, reunapyöristykset ja -tyylit,
+      ikonien koot, varjot, läpinäkyvyystasot ja animaatiot Figmaan. Tokenien pohjalta loin interaktiivisen ja animoidun
+      käyttöliittymäprototyypin. Prototypoinnin ohessa dokumentoin myös suunnitteluohjeet.
+    </p>
+    <OverlayLink href={designTokens.src}>
+      <Image src={designTokens} alt="Uuden käyttöliittymän design systemiä varten tehdyt design tokenit" />
+    </OverlayLink>
+    <p class="max-w-prose text-justify">
+      Suunnittelin sivunavigaation, johon käyttäjä voi kiinnittää sovelluksia ja kansioita. Järjestyksessä ylhäältä
+      alas, navigaatiopalkki sisältää linkin etusivulle, sovellussivun painikkeen ja plus-painikkeen, jolla voidaan
+      lisätä uusi sovellus järjestelmään. Työpöytänäkymässä navigaatiopalkki avautuu viedessä hiiren osoittimen sen
+      päälle, ja käyttäjä voi halutessaan kiinnittää sen auki. Mobiiliversiossa navigaatio puolestaan avautuu vasemmassa
+      yläkulmassa sijaitsevasta hampurilaisvalikosta. Kiinnitetyt sovellukset ja kansiot sijaitsevat jakajan
+      alapuolella. Sovellusnäkymässä näkyvät viimeksi avatut sovellukset sekä kaikki järjestelmän kansiot ja
+      sovellukset.
+    </p>
+    <p class="max-w-prose text-justify">
+      Uusi yläpalkki koostuu vasemmalta oikealle seuraavista elementeistä: avoinna olevan sivun tai sovelluksen nimi,
+      hakukenttä, tilanvalitsin, ohjepainike ja käyttäjäavatar. Tilanvalitsimen avulla käyttäjä voi vaihtaa
+      käyttöliittymän vaalean ja tumman tilan välillä. Ohjepainike vie ohjesivulle. Käyttäjäavatar toimii painikkeena,
+      joka avaa alasvetovalikon, jossa on kolme vaihtoehtoa: "Asetukset", "Viestit" ja "Kirjaudu ulos". Kapeammilla
+      näytöillä tilanvalitsin ja käyttäjäavatar on sijoitettu navigaatiopalkin sisään.
+    </p>
+    <OverlayLink href={applicationsDesktopAndMobile.src}>
+      <Image src={applicationsDesktopAndMobile} alt="Sovellukset-näkymän työpöytä- ja mobiiliversiot" />
+    </OverlayLink>
+    <OverlayLink href={navOpenDesktopAndMobile.src}>
+      <Image src={navOpenDesktopAndMobile} alt="Uusi sivunavigaatio avattuna" />
+    </OverlayLink>
+    <p class="max-w-prose text-justify">
+      Suunnittelin uuden taulukkonäkymän, jota käytetään suurten tietomassojen hallintaan järjestelmässä. Lisäsin
+      ominaisuuksia, kuten rivien lajittelun ja suodattamisen, sarakkeiden kiinnittämisen taulukon vasemmalle tai
+      oikealle reunalle sekä sarakkeiden näkyvyyden valinnan. Työpöytänäkymässä ominaisuuksien hallintapainikkeet
+      tulevat näkyviin, kun käyttäjä vie hiiren taulukon otsikkosolujen päälle. Pienemmillä näytöillä nämä toiminnot
+      löytyvät kunkin otsikkosolun vieressä olevan kolmen pisteen valikosta.
+    </p>
+    <OverlayLink href={personDesktopAndMobile.src}>
+      <Image src={personDesktopAndMobile} alt="Uusi taulukkodesign" />
+    </OverlayLink>
+    <p class="max-w-prose text-justify">
+      Tumma tila oli myös yksi suunnittelun vaatimuksista. Käytin himmeitä värisävyjä, jotka eivät rasita silmiä liikaa,
+      sillä loppukäyttäjät työskentelevät usein hämärissä ympäristöissä. Alla on esimerkki taulukkonäkymästä tummassa
+      tilassa. Lisäksi suunnittelin eri väriteemoja, jotka perustuvat tuoteperheen tuotteiden värimaailmoihin. Alla on
+      myös esimerkki yhdestä tuotekohtaisesta väriteemasta sekä vaaleassa että tummassa tilassa.
+    </p>
+    <OverlayLink href={personDarkDesktopAndMobile.src}>
+      <Image src={personDarkDesktopAndMobile} alt="Tumma versio taulukon designista" />
+    </OverlayLink>
+    <OverlayLink href={productThemeExample.src}>
+      <Image src={productThemeExample} alt="Tuoteteemaesimerkki" />
+    </OverlayLink>
+    <OverlayLink href={productThemeExampleDark.src}>
+      <Image src={productThemeExampleDark} alt="Tumma versio tuoteteemasta" />
+    </OverlayLink>
+    <p class="max-w-prose text-justify">
+      Käytin selkeitä värikontrasteja ja -yhdistelmiä ottaen huomioon värisokeat käyttäjät. Tarkistin myös tekstin
+      luettavuuden säännöllisesti varmistaakseni käyttöliittymän saavutettavuuden. Lisäksi lisäsin vaihtoehtoiset
+      tekstiselitteet ei-tekstimuotoiselle sisällölle. Noudatin UX-suunnittelun perusperiaatteita. Varmistin
+      esimerkiksi, että navigointi ja sisällön löytäminen on helppoa ja että käyttäjä on aina tietoinen siitä, missä hän
+      sijaitsee käyttöliittymässä. Suunnittelin toiminnot ennustettaviksi ja johdonmukaisiksi estääkseni käyttäjiä
+      tekemästä virheitä, kuten poistamasta tietoa vahingossa. Tarkistin säännöllisesti myös eri selainten
+      yhteensopivuuden.
+    </p>
+    <p class="max-w-prose text-justify">
+      Projekti toteutettiin Vue.js:llä ja komponenttikirjastona käytettiin Bootstrap 5:tä. Teknisessä toteutuksessa
+      rakensin käyttöliittymän rungon sekä vastasin sen teemojen ja tyylien määrittelystä. Lisäksi loin uusia
+      komponentteja. Olin jo ennestään perehtynyt Bootstrapiin, mutta Vue oli minulle teknologiana uusi tuttavuus ja toi
+      mukanaan uudenlaista osaamista.
+    </p>
+    <p class="max-w-prose text-justify">
+      Työni lopputuloksena syntyi kattava, interaktiivinen prototyyppi käyttöliittymästä, joka sisältää sekä työpöytä-
+      että mobiiliversiot. Lisäksi toteutin kuusi eri väriteemaa, jotka tukevat sekä vaaleaa että tummaa tilaa.
+      Varmistin, että suunnitteluohjeet ja tekninen toteutus olivat linjassa keskenään, jotta lopputulos vastasi
+      asetettuja vaatimuksia.
+    </p>
+    <OverlayLink href={figmaDesktop.src}>
+      <Image src={figmaDesktop} alt="Työpöytäversion Figmanäkymä" />
+    </OverlayLink>
+    <OverlayLink href={figmaMobile.src}>
+      <Image src={figmaMobile} alt="Mobiiliversion Figmanäkymä" />
+    </OverlayLink>
+    <p class="max-w-prose text-justify">
+      Uusi design on jo saanut kehuja sekä projektitiimiltä että muutamilta asiakkailta sen ulkoasusta ja käytettävyyden
+      parannuksista. En kuitenkaan pystynyt täysin luopumaan päävalikon puunäkymästä, sillä se olisi aiheuttanut
+      merkittäviä käytettävyysongelmia. Sen sijaan suunnittelin tiedostoselaimen kaltaisen näkymän, joka esittää
+      kerrallaan vain yhden tason puurakenteesta. Tuotekehitystiimi oli samaa mieltä kanssani, joten navigaatio
+      toteutettiin suunnitelmani mukaisesti. Uusi navigaatio on silti modernimpi ja merkittävästi erilaisempi kuin vanha
+      versio. Kehitysehdotuksia ei ole vielä saatu, sillä käyttöliittymä on vasta hiljattain julkaistu. Kehitystyö
+      jatkuu tulevaisuudessa yrityksen tarpeiden sekä käyttäjiltä ja työntekijöiltä saadun palautteen pohjalta.
+    </p>
+    <a data-astro-reload href="#top" title="Takaisin ylös" class="text-xl hover:text-primary-dark">Takaisin ylös</a>
+  </div>
+</PortfolioLayout>
