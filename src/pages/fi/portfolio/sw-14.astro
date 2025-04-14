@@ -16,12 +16,12 @@ import OverlayLink from "@components/overlay-link.astro";
 <PortfolioLayout title="Käyttöliittymäuudistus & suunnitteluohjeet">
   <div class="flex flex-col items-center gap-8">
     <div class="w-full max-w-prose">
-      <a href="/fi" class="text-xl hover:text-primary-dark">{"<<"}</a>
+      <a href="/fi" class="text-xl hover:text-primary-dark" aria-label="Mene takaisin etusivulle">{"<<"}</a>
     </div>
     <div class="w-full max-w-prose">
       <h1 class="text-3xl">Käyttöliittymäuudistus & suunnitteluohjeet</h1>
     </div>
-    <p class="max-w-prose text-justify">
+    <p class="max-w-prose">
       Nykyinen työnantajani päätti toteuttaa uuden version tuoteperheensä käyttöliittymästä. Tuoteperheen tuotteita
       käytetään useilla eri teollisuuden aloilla.
     </p>
@@ -60,7 +60,7 @@ import OverlayLink from "@components/overlay-link.astro";
         </li>
       </ul>
     </div>
-    <p class="max-w-prose text-justify">
+    <p class="max-w-prose">
       Aloitin suunnitteluprosessin perusteellisella tutkimuksella erityisesti uutta navigaatiota varten, sillä sitä ei
       haluttu enää esittää puunäkymänä hampurilaisvalikon takana. Kaikki keskeinen suunnittelutyö tehtiin Figmalla.
       Suunnittelin käyttöliittymästä sekä työpöytä- että mobiiliversiot ja valitsin sille uuden, modernin
@@ -71,7 +71,7 @@ import OverlayLink from "@components/overlay-link.astro";
     <OverlayLink href={designTokens.src}>
       <Image src={designTokens} alt="Uuden käyttöliittymän design systemiä varten tehdyt design tokenit" />
     </OverlayLink>
-    <p class="max-w-prose text-justify">
+    <p class="max-w-prose">
       Suunnittelin sivunavigaation, johon käyttäjä voi kiinnittää sovelluksia ja kansioita. Järjestyksessä ylhäältä
       alas, navigaatiopalkki sisältää linkin etusivulle, sovellussivun painikkeen ja plus-painikkeen, jolla voidaan
       lisätä uusi sovellus järjestelmään. Työpöytänäkymässä navigaatiopalkki avautuu viedessä hiiren osoittimen sen
@@ -80,7 +80,7 @@ import OverlayLink from "@components/overlay-link.astro";
       alapuolella. Sovellusnäkymässä näkyvät viimeksi avatut sovellukset sekä kaikki järjestelmän kansiot ja
       sovellukset.
     </p>
-    <p class="max-w-prose text-justify">
+    <p class="max-w-prose">
       Uusi yläpalkki koostuu vasemmalta oikealle seuraavista elementeistä: avoinna olevan sivun tai sovelluksen nimi,
       hakukenttä, tilanvalitsin, ohjepainike ja käyttäjäavatar. Tilanvalitsimen avulla käyttäjä voi vaihtaa
       käyttöliittymän vaalean ja tumman tilan välillä. Ohjepainike vie ohjesivulle. Käyttäjäavatar toimii painikkeena,
@@ -93,7 +93,7 @@ import OverlayLink from "@components/overlay-link.astro";
     <OverlayLink href={navOpenDesktopAndMobile.src}>
       <Image src={navOpenDesktopAndMobile} alt="Uusi sivunavigaatio avattuna" />
     </OverlayLink>
-    <p class="max-w-prose text-justify">
+    <p class="max-w-prose">
       Suunnittelin uuden taulukkonäkymän, jota käytetään suurten tietomassojen hallintaan järjestelmässä. Lisäsin
       ominaisuuksia, kuten rivien lajittelun ja suodattamisen, sarakkeiden kiinnittämisen taulukon vasemmalle tai
       oikealle reunalle sekä sarakkeiden näkyvyyden valinnan. Työpöytänäkymässä ominaisuuksien hallintapainikkeet
@@ -103,7 +103,7 @@ import OverlayLink from "@components/overlay-link.astro";
     <OverlayLink href={personDesktopAndMobile.src}>
       <Image src={personDesktopAndMobile} alt="Uusi taulukkodesign" />
     </OverlayLink>
-    <p class="max-w-prose text-justify">
+    <p class="max-w-prose">
       Tumma tila oli myös yksi suunnittelun vaatimuksista. Käytin himmeitä värisävyjä, jotka eivät rasita silmiä liikaa,
       sillä loppukäyttäjät työskentelevät usein hämärissä ympäristöissä. Alla on esimerkki taulukkonäkymästä tummassa
       tilassa. Lisäksi suunnittelin eri väriteemoja, jotka perustuvat tuoteperheen tuotteiden värimaailmoihin. Alla on
@@ -118,7 +118,7 @@ import OverlayLink from "@components/overlay-link.astro";
     <OverlayLink href={productThemeExampleDark.src}>
       <Image src={productThemeExampleDark} alt="Tumma versio tuoteteemasta" />
     </OverlayLink>
-    <p class="max-w-prose text-justify">
+    <p class="max-w-prose">
       Käytin selkeitä värikontrasteja ja -yhdistelmiä ottaen huomioon värisokeat käyttäjät. Tarkistin myös tekstin
       luettavuuden säännöllisesti varmistaakseni käyttöliittymän saavutettavuuden. Lisäksi lisäsin vaihtoehtoiset
       tekstiselitteet ei-tekstimuotoiselle sisällölle. Noudatin UX-suunnittelun perusperiaatteita. Varmistin
@@ -127,13 +127,13 @@ import OverlayLink from "@components/overlay-link.astro";
       tekemästä virheitä, kuten poistamasta tietoa vahingossa. Tarkistin säännöllisesti myös eri selainten
       yhteensopivuuden.
     </p>
-    <p class="max-w-prose text-justify">
+    <p class="max-w-prose">
       Projekti toteutettiin Vue.js:llä ja komponenttikirjastona käytettiin Bootstrap 5:tä. Teknisessä toteutuksessa
       rakensin käyttöliittymän rungon sekä vastasin sen teemojen ja tyylien määrittelystä. Lisäksi loin uusia
       komponentteja. Olin jo ennestään perehtynyt Bootstrapiin, mutta Vue oli minulle teknologiana uusi tuttavuus ja toi
       mukanaan uudenlaista osaamista.
     </p>
-    <p class="max-w-prose text-justify">
+    <p class="max-w-prose">
       Työni lopputuloksena syntyi kattava, interaktiivinen prototyyppi käyttöliittymästä, joka sisältää sekä työpöytä-
       että mobiiliversiot. Lisäksi toteutin kuusi eri väriteemaa, jotka tukevat sekä vaaleaa että tummaa tilaa.
       Varmistin, että suunnitteluohjeet ja tekninen toteutus olivat linjassa keskenään, jotta lopputulos vastasi
@@ -145,7 +145,7 @@ import OverlayLink from "@components/overlay-link.astro";
     <OverlayLink href={figmaMobile.src}>
       <Image src={figmaMobile} alt="Mobiiliversion Figmanäkymä" />
     </OverlayLink>
-    <p class="max-w-prose text-justify">
+    <p class="max-w-prose">
       Uusi design on jo saanut kehuja sekä projektitiimiltä että muutamilta asiakkailta sen ulkoasusta ja käytettävyyden
       parannuksista. En kuitenkaan pystynyt täysin luopumaan päävalikon puunäkymästä, sillä se olisi aiheuttanut
       merkittäviä käytettävyysongelmia. Sen sijaan suunnittelin tiedostoselaimen kaltaisen näkymän, joka esittää
@@ -154,6 +154,6 @@ import OverlayLink from "@components/overlay-link.astro";
       versio. Kehitysehdotuksia ei ole vielä saatu, sillä käyttöliittymä on vasta hiljattain julkaistu. Kehitystyö
       jatkuu tulevaisuudessa yrityksen tarpeiden sekä käyttäjiltä ja työntekijöiltä saadun palautteen pohjalta.
     </p>
-    <a data-astro-reload href="#top" title="Takaisin ylös" class="text-xl hover:text-primary-dark">Takaisin ylös</a>
+    <a data-astro-reload href="#top" class="text-xl hover:text-primary-dark">Takaisin ylös</a>
   </div>
 </PortfolioLayout>

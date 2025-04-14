@@ -1,6 +1,7 @@
 ---
 import { getRelativeLocaleUrl } from "astro:i18n";
 import LanguageToggle from "./language-toggle.astro";
+import { getCurrentLanguage } from "src/utils";
 
 interface Props {
   navItems: {
@@ -11,6 +12,13 @@ interface Props {
 }
 
 const { navItems } = Astro.props;
+
+const currentLanguage = getCurrentLanguage(Astro.currentLocale);
+
+const localizedMobileMenuToggleAria = {
+  fi: "Avaa menu",
+  en: "Open menu"
+}[currentLanguage];
 ---
 
 <main-navigation class="group">
@@ -30,7 +38,11 @@ const { navItems } = Astro.props;
     </nav>
     <LanguageToggle />
   </div>
-  <button id="mobile-menu-toggle" class="relative z-10 block h-7 w-8 cursor-pointer appearance-none sm:hidden">
+  <button
+    id="mobile-menu-toggle"
+    class="relative z-10 block h-7 w-8 cursor-pointer appearance-none sm:hidden"
+    aria-label={localizedMobileMenuToggleAria}
+  >
     <span
       class="absolute left-0 top-0 h-0.5 w-full bg-primary transition-transform group-data-[mobile-menu-open]:translate-y-[13px] group-data-[mobile-menu-open]:rotate-45"
     ></span>

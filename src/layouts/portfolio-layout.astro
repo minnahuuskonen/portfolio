@@ -30,6 +30,11 @@ const localizedNavLabels = {
   fi: { portfolio: "Portfolio", about: "Tietoa", contact: "Ota yhteyttä" },
   en: { portfolio: "Portfolio", about: "About", contact: "Contact" }
 }[currentLanguage];
+
+const localizedLogoAlt = {
+  fi: "Minna Huuskonen - Palaa etusivulle",
+  en: "Minna Huuskonen - Back to front page"
+}[currentLanguage];
 ---
 
 <html lang="en">
@@ -46,7 +51,7 @@ const localizedNavLabels = {
     <header id="header" class="sticky top-0 z-10 bg-white transition-shadow data-[not-on-top]:shadow-lg">
       <div class="mx-auto flex h-20 max-w-screen-lg flex-row items-center justify-between p-4">
         <a href=`/${currentLanguage}` class="z-10">
-          <Image src={logo} alt="Logo" loading="eager" class="sm:h-full" />
+          <Image src={logo} alt={localizedLogoAlt} loading="eager" class="sm:h-full" />
         </a>
         <MainNavigation
           navItems={[
@@ -60,7 +65,7 @@ const localizedNavLabels = {
     <main class="mx-auto my-8 max-w-screen-lg px-4 md:my-14">
       <slot />
     </main>
-    <footer class="flex h-40 flex-col items-center justify-center bg-primary-lightest/50">
+    <footer class="flex h-36 flex-col items-center justify-center bg-primary-lightest/50">
       <p class="text-zinc-600">© Minna Huuskonen 2025</p>
     </footer>
   </body>

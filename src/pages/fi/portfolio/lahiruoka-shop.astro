@@ -22,12 +22,12 @@ import OverlayLink from "@components/overlay-link.astro";
 <PortfolioLayout title="Digitaalinen palvelu lähiruoan ostamiseen">
   <div class="flex flex-col items-center gap-8">
     <div class="w-full max-w-prose">
-      <a href="/fi" class="text-xl hover:text-primary-dark">{"<<"}</a>
+      <a href="/fi" class="text-xl hover:text-primary-dark" aria-label="Mene takaisin etusivulle">{"<<"}</a>
     </div>
     <div class="w-full max-w-prose">
       <h1 class="text-3xl">Digitaalinen palvelu lähiruoan ostamiseen</h1>
     </div>
-    <p class="max-w-prose text-justify">
+    <p class="max-w-prose">
       REKO (Rejäl konsumtion - reilua kuluttamista) on malli paikallisen ruoan myymiseen ja ostamiseen. Kuluttajilla on
       mahdollisuus ostaa paikallista ruokaa suoraan tuottajilta Facebook-ryhmän kautta. Kuluttajien tulee noutaa
       tilauksensa sovitusta paikasta tiettyyn aikaan. Kaikki eivät kuitenkaan käytä Facebookia, eivätkä kaikki halua
@@ -35,7 +35,7 @@ import OverlayLink from "@components/overlay-link.astro";
       houkutteleva ja käyttäjäystävällinen palvelu tilausten tekemiseen. Päätin tutkia, millainen digitaalinen palvelu,
       joka on tarkoitettu paikallisen ruoan ostamiseen, voisi olla.
     </p>
-    <p class="max-w-prose text-justify">
+    <p class="max-w-prose">
       Etusivulla on mahdollisuus valita sijainti, josta asiakas haluaa noutaa tilauksensa. Sivusto käyttäisi myös
       sijaintitietoja, jonka avulla se ehdottaa kaupunkia, jossa käyttäjä voi selata tuotteita. Käyttäjä voi vaihtaa
       sijainnin sivuston yläreunasta. Yläreunasta on myös mahdollisuus kirjautua sisään ja rekisteröityä palveluun.
@@ -49,7 +49,7 @@ import OverlayLink from "@components/overlay-link.astro";
     <OverlayLink href={register.src}>
       <Image src={register} alt="Rekisteröidy-modaali" />
     </OverlayLink>
-    <p class="max-w-prose text-justify">
+    <p class="max-w-prose">
       Sijainnin valitsemisen jälkeen käyttäjä näkee kaikki valitun kaupungin tuotteet ja tuottajat. Tuotteet on
       järjestetty kategorioihin, ja kunkin tuotteen saatavilla oleva määrä on myös näkyvillä. Sivun yläreunasta löytyy
       hakutoiminto. Lisäksi sivulta löytyy osio, joka esittelee alueen kaikki tuottajat.
@@ -63,7 +63,7 @@ import OverlayLink from "@components/overlay-link.astro";
     <OverlayLink href={producer.src}>
       <Image src={producer} alt="Tuottajasivu" />
     </OverlayLink>
-    <p class="max-w-prose text-justify">
+    <p class="max-w-prose">
       Kun kategoria valitaan, käyttäjä näkee kaikki valitun kategorian saatavilla olevat tuotteet. Tuotteen nimen
       lisäksi näkyvillä on sen kappalehinta ja kilohinta. Käyttäjä voi joko valita tuotteen nähdäkseen sen tiedot tai
       lisätä sen suoraan ostoskoriin.
@@ -71,14 +71,14 @@ import OverlayLink from "@components/overlay-link.astro";
     <OverlayLink href={category.src}>
       <Image src={category} alt="Kategorianäkymä" />
     </OverlayLink>
-    <p class="max-w-prose text-justify">
+    <p class="max-w-prose">
       Tuotesivulla näkyy tuotteen kuvaus, tuottaja, sijainnit, joista tuote voidaan noutaa, sekä käytettävissä olevat
       maksutavat. Ostoskoriin lisättävän määrän voi myös tarvittaessa muuttaa.
     </p>
     <OverlayLink href={product.src}>
       <Image src={product} alt="Tuotenäkymä" />
     </OverlayLink>
-    <p class="max-w-prose text-justify">
+    <p class="max-w-prose">
       Ostoskorissa käyttäjä voi nähdä yhteenvedon lisättyjen tuotteiden nimistä, hinnoista ja määristä. Tuotteet voi
       myös poistaa ostoskorista. Kokonaishinta näkyy alareunassa. Käyttäjä voi jatkaa tuotteiden varaukseen, jolloin
       siirrytään maksusivulle.
@@ -86,7 +86,7 @@ import OverlayLink from "@components/overlay-link.astro";
     <OverlayLink href={shoppingbag.src}>
       <Image src={shoppingbag} alt="Ostoskori" />
     </OverlayLink>
-    <p class="max-w-prose text-justify">
+    <p class="max-w-prose">
       Maksusivulla käyttäjän on valittava noutopaikka tilaukselleen. "?"-napin takaa löytyvä vihjeteksti kertoo
       lisätietoa noutopaikan valinnasta. Käyttäjä näkee myös seuraavan noutoajankohdan aikataulun. Tilauksen
       vahvistamisen jälkeen käyttäjä ohjataan vahvistussivulle.
@@ -97,7 +97,7 @@ import OverlayLink from "@components/overlay-link.astro";
     <OverlayLink href={success.src}>
       <Image src={success} alt="Vahvistussivu" />
     </OverlayLink>
-    <p class="max-w-prose text-justify">
+    <p class="max-w-prose">
       Käyttäjä saa tilausvahvistuksen sähköpostitse. Jos käyttäjä on kirjautunut sisään, hän voi myös tarkastella
       tilaustaan profiilisivulta. Profiilisivu sisältää osiot käyttäjätiedoille, tuleville noudoille ja
       tilaushistorialle. Käyttäjätiedot-osiossa näkyvät käyttäjän nimi ja yhteystiedot, jotka ovat muokattavissa.
@@ -110,7 +110,7 @@ import OverlayLink from "@components/overlay-link.astro";
     <OverlayLink href={editprofile.src}>
       <Image src={editprofile} alt="Muokkaa profiilia -ominaisuus" />
     </OverlayLink>
-    <p class="max-w-prose text-justify">
+    <p class="max-w-prose">
       Tulevat noudot -osio näyttää tärkeät tiedot, kuten noutoajan, -päivämäärän ja -paikan, tilauksen yhteenvedon sekä
       käytettävissä olevat maksutavat. Tilaushistoria-osio puolestaan näyttää samat tiedot kaikista aiemmista
       tilauksista.
@@ -121,11 +121,11 @@ import OverlayLink from "@components/overlay-link.astro";
     <OverlayLink href={orderhistory.src}>
       <Image src={orderhistory} alt="Tilaushistoria" />
     </OverlayLink>
-    <p class="max-w-prose text-justify">
+    <p class="max-w-prose">
       Projekti on kokonaisuudessaan interaktiivinen prototyyppi, johon on toteutettu hover-tilat ja siirtymät. Seuraava
       askel olisi jatkokehittää suunnitelmaa järjestämällä käyttäjätestaus ja tehdä parannuksia sen tulosten
       perusteella.
     </p>
-    <a data-astro-reload href="#top" title="Takaisin ylös" class="text-xl hover:text-primary-dark">Takaisin ylös</a>
+    <a data-astro-reload href="#top" class="text-xl hover:text-primary-dark">Takaisin ylös</a>
   </div>
 </PortfolioLayout>

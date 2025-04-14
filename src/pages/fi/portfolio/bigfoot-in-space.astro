@@ -17,12 +17,12 @@ import OverlayLink from "@components/overlay-link.astro";
 <PortfolioLayout title="Pelin UI/UX-suunnittelu">
   <div class="flex flex-col items-center gap-8">
     <div class="w-full max-w-prose">
-      <a href="/fi" class="text-xl hover:text-primary-dark">{"<<"}</a>
+      <a href="/fi" class="text-xl hover:text-primary-dark" aria-label="Mene takaisin etusivulle">{"<<"}</a>
     </div>
     <div class="w-full max-w-prose">
       <h1 class="text-3xl">Pelin UI/UX-suunnittelu</h1>
     </div>
-    <p class="max-w-prose text-justify">
+    <p class="max-w-prose">
       Bigfoot in Space oli kouluprojekti, jossa vastuullani oli suunnitella pelin käyttöliittymäelementtejä, kuten
       painikkeita ja ikoneita. Osallistuin myös päävalikon taustan suunnitteluun sekä pelin UI/UX-suunnitteluun.
       Peli-idea on 2D-tasohyppelypeli, jossa pelaaja kerää esineitä vältellen samalla vihollisia ja vaaroja. Pelissä on
@@ -33,7 +33,7 @@ import OverlayLink from "@components/overlay-link.astro";
     <OverlayLink href={bigfootmenu.src}>
       <Image loading="eager" src={bigfootmenu} alt="Bigfoot in Space päämenu" />
     </OverlayLink>
-    <p class="max-w-prose text-justify">
+    <p class="max-w-prose">
       Aloitimme suunnitteluprosessin ideoimalla ja peli-idean hahmottelulla. Loimme pelillemme personan eli
       henkilöhahmon, jotta ymmärtäisimme paremmin mahdollisia pelaajiamme. Persona luotiin hyödyntämällä tutkimusta
       pelaajatyypeistä ja pelaajamotivaatiomalleista.
@@ -41,7 +41,7 @@ import OverlayLink from "@components/overlay-link.astro";
     <OverlayLink href={persona.src}>
       <Image src={persona} alt="Amy Hopkins - Peliämme varten luotu persoona" />
     </OverlayLink>
-    <p class="max-w-prose text-justify">
+    <p class="max-w-prose">
       Toteutimme myös punaiset reitit (red routes), sivukartat ja vuokaaviot pelin käyttöliittymälle. Punaiset reitit
       auttoivat meitä tunnistamaan kaikki kriittiset tehtävät, jotka tuovat eniten arvoa käyttäjille, kuten pelin
       aloittaminen. Sivukarttoja käytettiin käyttöliittymän informaatiohierarkian havainnollistamiseen. Suunnittelimme
@@ -57,7 +57,7 @@ import OverlayLink from "@components/overlay-link.astro";
     <OverlayLink href={flowchart.src}>
       <Image src={flowchart} alt="Vuokaaviot pelimme käyttöliittymälle" />
     </OverlayLink>
-    <p class="max-w-prose text-justify">
+    <p class="max-w-prose">
       UI/UX-prosessi jatkui pelin käyttöliittymän hahmottelulla ja low-fidelity-mallinnosten luomisella Figmaan.
       Erilaiset siirtymät ruutujen välillä ja modaalien avaaminen lisättiin testauksen tueksi. Laadimme myös
       UX-dokumentaation, joka sisälsi pelin esittelyn, kohderyhmät ja pelin informaatioarkkitehtuurin.
@@ -65,7 +65,7 @@ import OverlayLink from "@components/overlay-link.astro";
       kyselyä. Testauksen tavoitteena oli arvioida käyttöliittymän käytettävyyttä ja selvittää, ymmärtävätkö testaajat,
       miten pelin taukovalikko avataan.
     </p>
-    <p class="max-w-prose text-justify">
+    <p class="max-w-prose">
       Käyttäjätestauksessa oli kolme tehtävää: pelin asetusten löytäminen, pelin käynnistäminen sekä taukovalikon
       avaaminen ja päävalikkoon siirtyminen. Testauksen jälkeen osallistujia pyydettiin täyttämään kyselylomake, jossa
       he antoivat palautetta ja taustatietoja itsestään sekä aiemmasta pelikokemuksestaan. Palaute oli pääasiassa
@@ -78,7 +78,7 @@ import OverlayLink from "@components/overlay-link.astro";
     <OverlayLink href={wireframe.src}>
       <Image src={wireframe} alt="Lo-fi rautalankamalli pelimme käyttöliittymästä" />
     </OverlayLink>
-    <p class="max-w-prose text-justify">
+    <p class="max-w-prose">
       Seuraavaksi loimme pelin päävalikosta high-fidelity-version. Käytimme värejä ja fontteja, jotka sopivat hyvin
       sarjakuvamaiseen avaruusteemaan. Olin vastuussa painikkeiden, ikoneiden ja päävalikon taustan luonnoksen
       toteutuksesta. Käyttöliittymäelementtien värit valittiin niin, että ne erottuvat selkeästi taustasta. Lopuksi
@@ -97,12 +97,12 @@ import OverlayLink from "@components/overlay-link.astro";
     <OverlayLink href={icons.src}>
       <Image src={icons} alt="Tyylioppaan ikonit" />
     </OverlayLink>
-    <p class="max-w-prose text-justify">
+    <p class="max-w-prose">
       Saimme opettajaltamme erittäin positiivista palautetta ja olimme itsekin tyytyväisiä projektin lopputulokseen.
       Osana kurssia meidän tuli pitää henkilökohtaista oppimispäiväkirjaa, jossa dokumentoimme sekä projektin vaiheet
       että oppitunneilla käsitellyt keskeiset UX/UI-suunnitteluperiaatteet. Opettajani oli erityisen vaikuttunut
       oppimispäiväkirjastani ja pyysi lupaa käyttää sitä esimerkkinä tuleville opiskelijoille.
     </p>
-    <a data-astro-reload href="#top" title="Takaisin ylös" class="text-xl hover:text-primary-dark">Takaisin ylös</a>
+    <a data-astro-reload href="#top" class="text-xl hover:text-primary-dark">Takaisin ylös</a>
   </div>
 </PortfolioLayout>

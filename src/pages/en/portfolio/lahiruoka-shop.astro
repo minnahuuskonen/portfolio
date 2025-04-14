@@ -22,12 +22,12 @@ import OverlayLink from "@components/overlay-link.astro";
 <PortfolioLayout title="A Digital Service for Buying Local Food">
   <div class="flex flex-col items-center gap-8">
     <div class="w-full max-w-prose">
-      <a href="/en" class="text-xl hover:text-primary-dark">{"<<"}</a>
+      <a href="/en" class="text-xl hover:text-primary-dark" aria-label="Go back to front page">{"<<"}</a>
     </div>
     <div class="w-full max-w-prose">
       <h1 class="text-3xl">A Digital Service for Buying Local Food</h1>
     </div>
-    <p class="max-w-prose text-justify">
+    <p class="max-w-prose">
       REKO (Rejäl konsumtion - Fair consumption) is a model for selling and buying local food. Consumers get an
       opportunity to buy local food directly from food producers via a Facebook group. Consumers are then supposed to
       collect their order from an appointed location at a specific time. However, not everyone uses Facebook nor is
@@ -35,7 +35,7 @@ import OverlayLink from "@components/overlay-link.astro";
       and user-friendly service for placing an order. I decided to experiment how a digital service meant for buying
       local food could look and feel like.
     </p>
-    <p class="max-w-prose text-justify">
+    <p class="max-w-prose">
       In the front page, there is an opportunity to choose a location, where the customer wants to pick their order
       from. The site would also use location data that suggests a city, where the user can browse products. The user can
       always change the location from the header. Login and an option to register to the service are also available
@@ -50,7 +50,7 @@ import OverlayLink from "@components/overlay-link.astro";
     <OverlayLink href={register.src}>
       <Image src={register} alt="Register modal" />
     </OverlayLink>
-    <p class="max-w-prose text-justify">
+    <p class="max-w-prose">
       After choosing a location, the user can see all the products and producers of the selected city. Products are
       arranged in categories and the amount of current products can be seen too. There is a search at the top of the
       page. There is also a section that introduces all the producers of the area.
@@ -64,7 +64,7 @@ import OverlayLink from "@components/overlay-link.astro";
     <OverlayLink href={producer.src}>
       <Image src={producer} alt="Producer page" />
     </OverlayLink>
-    <p class="max-w-prose text-justify">
+    <p class="max-w-prose">
       When a category is selected, the user can see all the products available of the selected category. The name of the
       product is visible as well as its price per unit and price per kilogram. The user can either select the product to
       view the details of it or directly add it to the shopping basket.
@@ -72,14 +72,14 @@ import OverlayLink from "@components/overlay-link.astro";
     <OverlayLink href={category.src}>
       <Image src={category} alt="Category view" />
     </OverlayLink>
-    <p class="max-w-prose text-justify">
+    <p class="max-w-prose">
       Product page shows a description of the product, the producer, the locations where the product can be picked from,
       and available payment methods. The amount to be added to the shopping basket can be changed as well.
     </p>
     <OverlayLink href={product.src}>
       <Image src={product} alt="Product view" />
     </OverlayLink>
-    <p class="max-w-prose text-justify">
+    <p class="max-w-prose">
       In the shopping basket the user can see a summary of the names, prices, and the amounts of the products added to
       the basket. Products can also be removed from the basket. Total price of the purchase can be seen at the bottom.
       The user can proceed to reserve the products, which then redirects to a checkout page.
@@ -87,7 +87,7 @@ import OverlayLink from "@components/overlay-link.astro";
     <OverlayLink href={shoppingbag.src}>
       <Image src={shoppingbag} alt="Shopping basket" />
     </OverlayLink>
-    <p class="max-w-prose text-justify">
+    <p class="max-w-prose">
       At the checkout page, the user has to choose a pickup location for the order. Info button with a question mark
       shows a tooltip that explains this to the user. The user can see the schedule of the next pickup distribution at
       available locations. After confirming the order, the user gets redirected to confirmation page.
@@ -98,7 +98,7 @@ import OverlayLink from "@components/overlay-link.astro";
     <OverlayLink href={success.src}>
       <Image src={success} alt="Confirmation page" />
     </OverlayLink>
-    <p class="max-w-prose text-justify">
+    <p class="max-w-prose">
       The user gets an email of their order. If the user is logged in, they can also see their order from a profile
       page. The profile page has sections for account information, incoming pickups and order history. Account section
       contains the name and contact information of the user. The information can also be edited. In edit mode, the user
@@ -110,7 +110,7 @@ import OverlayLink from "@components/overlay-link.astro";
     <OverlayLink href={editprofile.src}>
       <Image src={editprofile} alt="Edit profile view" />
     </OverlayLink>
-    <p class="max-w-prose text-justify">
+    <p class="max-w-prose">
       The Incoming pickups section shows important information, such as time, date and location of the pickup, the
       summary of the order, and available payment methods. The Order history section displays the same information for
       all previous orders.
@@ -121,10 +121,10 @@ import OverlayLink from "@components/overlay-link.astro";
     <OverlayLink href={orderhistory.src}>
       <Image src={orderhistory} alt="Order history view" />
     </OverlayLink>
-    <p class="max-w-prose text-justify">
+    <p class="max-w-prose">
       The project overall is an interactive prototype with hover states and transitions. The next step would be
       improving the design by arranging user testing sessions.
     </p>
-    <a data-astro-reload href="#top" title="Back to top" class="text-xl hover:text-primary-dark">Back to Top</a>
+    <a data-astro-reload href="#top" class="text-xl hover:text-primary-dark">Back to Top</a>
   </div>
 </PortfolioLayout>

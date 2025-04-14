@@ -16,12 +16,12 @@ import OverlayLink from "@components/overlay-link.astro";
 <PortfolioLayout title="UI Redesign & Design Guidelines">
   <div class="flex flex-col items-center gap-8">
     <div class="w-full max-w-prose">
-      <a href="/en" class="text-xl hover:text-primary-dark">{"<<"}</a>
+      <a href="/en" class="text-xl hover:text-primary-dark" aria-label="Go back to front page">{"<<"}</a>
     </div>
     <div class="w-full max-w-prose">
       <h1 class="text-3xl">UI Redesign & Design Guidelines</h1>
     </div>
-    <p class="max-w-prose text-justify">
+    <p class="max-w-prose">
       My current employer decided to implement a new version of their product family's user interface. The products of
       the family are used in several different industrial sectors.
     </p>
@@ -56,7 +56,7 @@ import OverlayLink from "@components/overlay-link.astro";
         </li>
       </ul>
     </div>
-    <p class="max-w-prose text-justify">
+    <p class="max-w-prose">
       I started the design process with thorough research, especially for the new navigation, which was not supposed to
       be under a hamburger menu as a tree structure anymore. All fundamental design work was done in Figma. I designed
       both desktop and mobile versions of the UI. I also chose a new, modern icon set for the UI. I added design tokens
@@ -67,7 +67,7 @@ import OverlayLink from "@components/overlay-link.astro";
     <OverlayLink href={designTokens.src}>
       <Image src={designTokens} alt="Design tokens for the new UI's design system" />
     </OverlayLink>
-    <p class="max-w-prose text-justify">
+    <p class="max-w-prose">
       I designed a side navigation, where the user can pin applications and folders. In order from the top, there is a
       home page, applications page, and a plus button for adding a new application to the system. In desktop sizes, the
       navigation bar opens when hovered and the user can choose to lock it open. In the mobile counterpart, the
@@ -75,7 +75,7 @@ import OverlayLink from "@components/overlay-link.astro";
       located under a divider. Applications view contains recently opened applications and all folders and applications
       of the system.
     </p>
-    <p class="max-w-prose text-justify">
+    <p class="max-w-prose">
       The new header consists of, from left to right, the name of the page/application currently open, search field,
       mode selection switch, help button and user avatar. Mode selection switch is used to choose either light or dark
       mode of the UI. Help button navigates to the help page. User avatar functions as a button that opens a dropdown
@@ -88,7 +88,7 @@ import OverlayLink from "@components/overlay-link.astro";
     <OverlayLink href={navOpenDesktopAndMobile.src}>
       <Image src={navOpenDesktopAndMobile} alt="New side navigation opened" />
     </OverlayLink>
-    <p class="max-w-prose text-justify">
+    <p class="max-w-prose">
       I also redesigned the table view used to manage large datasets in the system. I added features such as sorting and
       filtering rows, column pinning to the left or right side of the table and column visibility selection. The
       controls for the features appear by hovering or focusing the table header cells in desktop sizes. On small screens
@@ -97,7 +97,7 @@ import OverlayLink from "@components/overlay-link.astro";
     <OverlayLink href={personDesktopAndMobile.src}>
       <Image src={personDesktopAndMobile} alt="New table design" />
     </OverlayLink>
-    <p class="max-w-prose text-justify">
+    <p class="max-w-prose">
       A dark mode was also a requirement for the design. I chose dim color combinations, which would not strain eyes too
       much as the end users often operate in low-light environments. Below is an example of the table view with dark
       mode enabled. I also designed different color themes based on the product colors of the product family. An example
@@ -112,7 +112,7 @@ import OverlayLink from "@components/overlay-link.astro";
     <OverlayLink href={productThemeExampleDark.src}>
       <Image src={productThemeExampleDark} alt="Dark mode of a product theme" />
     </OverlayLink>
-    <p class="max-w-prose text-justify">
+    <p class="max-w-prose">
       I used perceivable color contrasts and combinations, considering color blind users. I also verified readability of
       text regularly to ensure accessibility. I added alternative text labels for non-text content whenever possible
       while creating or styling UI components. I followed basic UX principles - for instance, to make sure that
@@ -120,12 +120,12 @@ import OverlayLink from "@components/overlay-link.astro";
       to be predictable and consistent to prevent users making mistakes such as accidentally deleting something. I
       regularly verified cross-browser compatibility.
     </p>
-    <p class="max-w-prose text-justify">
+    <p class="max-w-prose">
       From the technical standpoint, the project was implemented with Vue.js. Bootstrap 5 was used as a component
       library. During the technical implementation, I structured the layout for the UI and did the theming and styling
       of it. I created new components too. I was already familiar with Bootstrap, but using a bit of Vue was new to me.
     </p>
-    <p class="max-w-prose text-justify">
+    <p class="max-w-prose">
       The final results of my work were a comprehensive, interactive prototype of the UI, which included versions for
       desktop and mobile screen sizes, and six different color themes with support for both light and dark mode. I
       confirmed that the design guidelines and the implementation were in line with each other.
@@ -136,7 +136,7 @@ import OverlayLink from "@components/overlay-link.astro";
     <OverlayLink href={figmaMobile.src}>
       <Image src={figmaMobile} alt="Figma view of mobile version" />
     </OverlayLink>
-    <p class="max-w-prose text-justify">
+    <p class="max-w-prose">
       The new design already received compliments from the project team and a few customers about its appeareance and
       usability enhancements. I was not able to completely get rid of the tree structure for the main menu, as it would
       have caused major usability issues. Instead, I created a file browser like view that presents a single layer of
@@ -145,6 +145,6 @@ import OverlayLink from "@components/overlay-link.astro";
       there has not been any development proposals yet as the UI has only recently been published. The development will
       continue in future based on the company needs and feedback received from users and employees.
     </p>
-    <a data-astro-reload href="#top" title="Back to top" class="text-xl hover:text-primary-dark">Back to Top</a>
+    <a data-astro-reload href="#top" class="text-xl hover:text-primary-dark">Back to Top</a>
   </div>
 </PortfolioLayout>

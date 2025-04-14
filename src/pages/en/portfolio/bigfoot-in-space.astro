@@ -17,12 +17,12 @@ import OverlayLink from "@components/overlay-link.astro";
 <PortfolioLayout title="Game UI/UX Design">
   <div class="flex flex-col items-center gap-8">
     <div class="w-full max-w-prose">
-      <a href="/en" class="text-xl hover:text-primary-dark">{"<<"}</a>
+      <a href="/en" class="text-xl hover:text-primary-dark" aria-label="Go back to front page">{"<<"}</a>
     </div>
     <div class="w-full max-w-prose">
       <h1 class="text-3xl">Game UI/UX Design</h1>
     </div>
-    <p class="max-w-prose text-justify">
+    <p class="max-w-prose">
       Bigfoot in Space was a school group project, where my responsibility was to design the UI assets such as buttons
       and icons for the game idea. I also participated in designing the background of the main menu as well as the
       overall UI/UX of the game. The game idea is a 2D platformer, where the player collects items while avoiding
@@ -33,7 +33,7 @@ import OverlayLink from "@components/overlay-link.astro";
     <OverlayLink href={bigfootmenu.src}>
       <Image loading="eager" src={bigfootmenu} alt="Bigfoot in Space main menu" />
     </OverlayLink>
-    <p class="max-w-prose text-justify">
+    <p class="max-w-prose">
       We started the design process by brainstorming and sketching the game idea. We created a persona for our game to
       understand our potential players better. Research about player types and gamer motivation models were used to come
       up with the persona.
@@ -41,7 +41,7 @@ import OverlayLink from "@components/overlay-link.astro";
     <OverlayLink href={persona.src}>
       <Image src={persona} alt="Amy Hopkins - A persona for our game" />
     </OverlayLink>
-    <p class="max-w-prose text-justify">
+    <p class="max-w-prose">
       We also implemented red routes, sitemaps and flowcharts for the game UI. Red routes showed us all the critital
       tasks that deliver the most value to users, such as starting the game. Sitemaps were used to illustrate the
       information hierarchy in the UI. We planned the flow of the UI with flowcharts. Case studies utilizing the persona
@@ -56,7 +56,7 @@ import OverlayLink from "@components/overlay-link.astro";
     <OverlayLink href={flowchart.src}>
       <Image src={flowchart} alt="Flowchart for our UI" />
     </OverlayLink>
-    <p class="max-w-prose text-justify">
+    <p class="max-w-prose">
       The UI/UX process continued with sketching the UI of the game and creating low-fidelity wireframes of it in Figma.
       Transitions between different screens and opening modals were added for testing purposes. We also implemented UX
       documentation that included an introduction of the game, target demographics and information architecture of the
@@ -64,7 +64,7 @@ import OverlayLink from "@components/overlay-link.astro";
       and a survey. The goal of testing was to test the usability of the interface and find out if testers understand
       how to open the pause menu.
     </p>
-    <p class="max-w-prose text-justify">
+    <p class="max-w-prose">
       The test consisted of three tasks: finding settings of the game, starting the game and opening the pause menu and
       exiting to the main menu. After testing was completed, the participants were asked to fill in a survey for
       feedback and background information regarding them and their previous experience with games. Overall feedback was
@@ -76,7 +76,7 @@ import OverlayLink from "@components/overlay-link.astro";
     <OverlayLink href={wireframe.src}>
       <Image src={wireframe} alt="Lo-fi Wireframe of the game" />
     </OverlayLink>
-    <p class="max-w-prose text-justify">
+    <p class="max-w-prose">
       Next, we created a high-fidelity version of the main menu. We used colors and fonts that are suitable for a
       cartoony space-themed game. I was responsible for creating buttons, icons and a sketch of the main menu. UI
       elements use colors that have a clear contrast to the background. Finally, a style guide was created. The purpose
@@ -94,12 +94,12 @@ import OverlayLink from "@components/overlay-link.astro";
     <OverlayLink href={icons.src}>
       <Image src={icons} alt="Style Guide icons" />
     </OverlayLink>
-    <p class="max-w-prose text-justify">
+    <p class="max-w-prose">
       We received highly positive feedback from our teacher/lecturer and were pleased with the outcome of the project.
       As part of the course, we were required to maintain a personal learning diary documenting the project and
       fundamental UX/UI design principles covered in the lessons. My teacher was particularly impressed with my learning
       diary and asked for permission to use it as an example for future students.
     </p>
-    <a data-astro-reload href="#top" title="Back to top" class="text-xl hover:text-primary-dark">Back to Top</a>
+    <a data-astro-reload href="#top" class="text-xl hover:text-primary-dark">Back to Top</a>
   </div>
 </PortfolioLayout>
